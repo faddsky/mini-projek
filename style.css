@@ -1,0 +1,187 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f8f3ec;
+  color: #333;
+}
+
+.header {
+  text-align: center;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #333;
+}
+
+/* Teks "NSB" (Awalnya Ditampilkan) */
+.header h1 .short-name {
+    display: block;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Teks "PT. Nawesena Sukses Bersama" (Awalnya Disembunyikan) */
+.header h1 .full-name {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transform: translateY(20px); /* Geser ke bawah */
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Efek Saat Hover */
+.header h1:hover .short-name {
+    opacity: 0;
+    transform: translateY(-20px); /* Geser ke atas saat hilang */
+}
+
+.header h1:hover .full-name {
+    opacity: 1;
+    transform: translateY(0); /* Naik ke posisi semula */
+}
+
+@media (max-width: 600px) {
+  .header h1 {
+      font-size: 24px;
+  }
+}
+
+.coffee-bg {
+  width: 100vw;
+  height: 50vh;
+  background-image: url("Aset/bg_kopi.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.content {
+  width: 100vw;
+  padding: 20px;
+  text-align: center;
+  background-color: #f8f3ec;
+  box-sizing: border-box;
+  margin-top: 20px;
+}
+
+.content p {
+  font-size: 18px;
+  color: #5a4633;
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* MEET OUR TEAM */
+.team {
+  text-align: center;
+  padding: 20px;
+}
+
+.team h2 {
+  margin-bottom: 20px;
+}
+
+.team .member {
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+  position: relative; /* Posisi relatif agar teks bisa diposisikan */
+  transition: transform 0.3s ease; /* Menambahkan transisi untuk efek pembesaran */
+}
+
+.team .member img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #ddd;
+  transition: transform 0.3s ease;
+}
+
+.team .member img:hover {
+  transform: scale(0.9); /* Membuat gambar mengecil saat hover */
+}
+
+/* Sembunyikan nama dan jabatan secara default */
+.team .member p {
+  position: absolute;
+  width: 100%;
+  bottom: -40px; /* Posisikan di bawah gambar */
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Munculkan teks saat hover */
+.team .member:hover p {
+  opacity: 1;
+}
+
+/* PRODUCT SECTION */
+#product {
+  text-align: center;
+  margin: 50px 0;
+  font-family: "Arial", sans-serif;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-card {
+  background-color: #f5e4d5;
+  border-radius: 10px;
+  padding: 15px;
+  width: 220px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.product-card img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.product-card h3 {
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.product-card p {
+  font-size: 16px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .product-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .product-card {
+      width: 80%;
+  }
+}
