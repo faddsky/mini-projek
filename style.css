@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Playfair Display", serif; /* Menggunakan Playfair Display untuk semua teks */
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -9,6 +9,7 @@ body {
 }
 
 .header {
+  font-weight: 700;
   text-align: center;
   margin: 0;
   height: 100vh;
@@ -24,35 +25,35 @@ body {
 
 /* Teks "NSB" (Awalnya Ditampilkan) */
 .header h1 .short-name {
-    display: block;
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  display: block;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 /* Teks "PT. Nawesena Sukses Bersama" (Awalnya Disembunyikan) */
 .header h1 .full-name {
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    transform: translateY(20px); /* Geser ke bawah */
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(20px); /* Geser ke bawah */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 /* Efek Saat Hover */
 .header h1:hover .short-name {
-    opacity: 0;
-    transform: translateY(-20px); /* Geser ke atas saat hilang */
+  opacity: 0;
+  transform: translateY(-20px); /* Geser ke atas saat hilang */
 }
 
 .header h1:hover .full-name {
-    opacity: 1;
-    transform: translateY(0); /* Naik ke posisi semula */
+  opacity: 1;
+  transform: translateY(0); /* Naik ke posisi semula */
 }
 
 @media (max-width: 600px) {
   .header h1 {
-      font-size: 24px;
+    font-size: 24px;
   }
 }
 
@@ -75,7 +76,7 @@ body {
 }
 
 .content p {
-  font-size: 18px;
+  font-size: 23px;
   color: #5a4633;
   line-height: 1.5;
   max-width: 800px;
@@ -90,6 +91,7 @@ body {
 }
 
 .team h2 {
+  font-weight: 700;
   margin-bottom: 20px;
 }
 
@@ -115,6 +117,7 @@ body {
 
 /* Sembunyikan nama dan jabatan secara default */
 .team .member p {
+  font-size: 14px;
   position: absolute;
   width: 100%;
   bottom: -40px; /* Posisikan di bawah gambar */
@@ -138,7 +141,7 @@ body {
 #product {
   text-align: center;
   margin: 50px 0;
-  font-family: "Arial", sans-serif;
+  font-weight: 700;
 }
 
 .product-container {
@@ -155,6 +158,11 @@ body {
   width: 220px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: transform 0.3s ease; /* Menambahkan transisi untuk efek pembesaran */
+}
+
+.product-card:hover {
+  transform: scale(0.95); /* Mengurangi ukuran saat hover */
 }
 
 .product-card img {
@@ -165,6 +173,7 @@ body {
 }
 
 .product-card h3 {
+  font-weight: 600; /* Bold untuk nama produk */
   font-size: 18px;
   color: #000;
   margin-bottom: 10px;
@@ -177,11 +186,11 @@ body {
 
 @media (max-width: 768px) {
   .product-container {
-      flex-direction: column;
-      align-items: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .product-card {
-      width: 80%;
+    width: 80%;
   }
 }
